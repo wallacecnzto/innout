@@ -19,4 +19,13 @@ class Database {
         return $conn;
     }
 
+        public static function getResultFromQuery($sql) {
+
+        $conn = self::getConnection($sql);
+        $result = $conn->query($sql);
+        $conn->close();
+
+        return $result;
+    }
+
 }
